@@ -1,0 +1,11 @@
+body {
+  background-color: #EEEEEE;
+}
+
+header {
+    background-color: #222831;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 0;
+}
