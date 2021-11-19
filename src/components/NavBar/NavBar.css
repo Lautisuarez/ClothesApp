@@ -19,7 +19,9 @@
 }
 .nav li a:hover {
     background-color: #EEEEEE;
-    font-weight: 400;
     color: #222831;
 }
-
+.nav li#carro {
+    margin-left: 1rem;
+    margin-top: -.5rem;
+}

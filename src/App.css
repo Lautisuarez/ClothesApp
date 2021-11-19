@@ -1,11 +1,35 @@
 body {
   background-color: #EEEEEE;
 }
-
 header {
-    background-color: #222831;
+  background-color: #222831;
+}
+header div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: .5rem 0;
+}
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 2rem auto;
+  color: #222831;
+  font-weight: bold;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+@media (min-width:1024px) {
+  .items {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
