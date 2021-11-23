@@ -6,7 +6,7 @@ const ItemCount = ({stock}) => {
     const [counter, setCounter] = useState(0);
 
     const increase = () => {
-        if (counter != stock){
+        if (counter !== Number(stock)){
             setCounter(counter + 1);
         }
     }
@@ -18,7 +18,7 @@ const ItemCount = ({stock}) => {
     return (
         <div className="counter">
             <Icon link name="minus" onClick={decrease}/>
-            <input type='number' value={counter} />
+            <input type='number' value={counter} onChange={(e)=>setCounter(counter)}/>
             <Icon link name="plus" onClick={increase}/>
         </div>
     )

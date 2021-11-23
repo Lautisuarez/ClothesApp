@@ -4,7 +4,7 @@ _Desarrollado como proyecto para CoderHouse._
 **Comision 25375**
 
 ## Sitio web 🌐
-<a href="https://lautisuarez.github.io/ClothesApp-Suarez/" target="_blank">ClothesApp</a>
+<a href="https://clothesapp-suarez.netlify.app/" target="_blank">ClothesApp</a>
 
 ## Como editarlo ✏️
 ```
@@ -13,7 +13,7 @@ git clone https://github.com/Lautisuarez/ClothesApp-Suarez.git
 
 ## Construido con 🛠️
 * HTML5
-* CSS (SASS)
+* CSS
 * JavaScript
 * React
 
