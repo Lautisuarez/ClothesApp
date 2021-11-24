@@ -1,3 +1,4 @@
+// Semantic
 import { Icon } from "semantic-ui-react"
 
 const CartWidget = () => {

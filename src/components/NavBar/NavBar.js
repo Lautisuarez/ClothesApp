@@ -1,4 +1,5 @@
 import "./NavBar.css"
+// Components
 import CartWidget from '../../components/CartWidget/CartWidget';
 
 const NavBar = () => {

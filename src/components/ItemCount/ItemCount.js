@@ -1,16 +1,18 @@
 import "./ItemCount.css"
-import { Icon } from "semantic-ui-react";
 import { useState } from "react";
+
+// Semantic
+import { Icon } from "semantic-ui-react";
 
 const ItemCount = ({stock}) => {
     const [counter, setCounter] = useState(0);
 
-    const increase = () => {
+    const increase = () => { // Incrementamos el contador en caso de que no se supere el stock disponible
         if (counter !== Number(stock)){
             setCounter(counter + 1);
         }
     }
-    const decrease = () => {
+    const decrease = () => { // Decrementamos el contador en caso de que no sea igual a 0
         if (counter > 0){
             setCounter(counter - 1);
         }

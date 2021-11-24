@@ -1,6 +1,6 @@
+import "./CarouselBS.css"
 // BOOTSTRAP
 import { Carousel } from 'react-bootstrap';
-import "./CarouselBS.css"
 
 const CarouselBS = () => {
     return (

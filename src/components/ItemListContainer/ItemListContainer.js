@@ -1,15 +1,22 @@
-import "./ItemListContainer.css"
-import ItemCount from "../ItemCount/ItemCount";
+import { useEffect, useState } from 'react';
+// Axios
+import axios from 'axios';
+// Components
+import ItemList from "../ItemList/ItemList";
 
-const ItemListContainer = ({ src, title, price, stock }) => {
+const ItemListContainer = () => {
+    const [products, setProducts] = useState([]);
+
+    // Realizamos el llamado a la api para obtener los productos
+    useEffect(() => {
+        axios.get(
+            'https://sheet.best/api/sheets/249e2778-ffef-44b9-a6ce-a1c64c7d8c35'
+        ).then((res) => {
+                setProducts(res.data) // Los guardamos en un estado
+            })
+    }, []);
     return(
-        <article className="item">
-            <img src={src} alt="" />
-            <h2>{title}</h2>
-            <p>${price}</p>
-            <ItemCount stock={stock}/>
-            <button>Comprar</button>
-        </article>
+        <ItemList products={products} /> // Y lo enviamos para ser procesada
     )
 }
 
