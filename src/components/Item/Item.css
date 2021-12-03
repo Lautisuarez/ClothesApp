@@ -25,7 +25,7 @@
     color: #222831;
     font-size: 2rem;
 }
-.item button {
+.item .btn {
     background-color: #222831;
     border-radius: 1rem;
     border: 1px solid #EEE;
@@ -35,7 +35,7 @@
     font-size: 1.2rem;
     transition: .5s all;
 }
-.item button:hover {
+.item .btn:hover {
     background-color: #EEE;
     color: #222831;
     border: 1px solid #222831;

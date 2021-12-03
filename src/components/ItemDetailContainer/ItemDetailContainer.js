@@ -1,27 +1,28 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 // Axios
 import axios from 'axios';
 // Components
-import ItemDetail from "../ItemDetail/ItemDetail";
+import ItemDetail from "../../views/ItemDetail/ItemDetail";
 
-const ItemDetailContainer = ({title, show, onHide}) => {
+const ItemDetailContainer = () => {
+    let id = useParams();
+    let userID = id.id;
+
     const [products, setProducts] = useState([]);
 
     // Realizamos el llamado a la api para obtener los productos
     useEffect(() => {
         axios.get(
-            `https://api.sheety.co/40b027907e992305fec2df6cfd192e71/clothesAppBd/hoja1`
+            `https://sheet.best/api/sheets/249e2778-ffef-44b9-a6ce-a1c64c7d8c35/${userID}`
         ).then((res) => {
-                const resultado = res.data.hoja1.find(prod => prod.title === title)
-                setProducts(resultado) // Los guardamos en un estado
+                setProducts(res.data[0]) // Los guardamos en un estado
             })
-    }, []);
+    }, [userID]);
 
     return(
         <ItemDetail
             products={products}
-            show={show}
-            onHide={onHide}
         />
     )
 }
