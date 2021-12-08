@@ -3,6 +3,7 @@ import "./ItemDetail.css"
 import { Card } from "react-bootstrap";
 //Components
 import ItemCount from "../../components/ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({products}) => {
 
@@ -16,7 +17,7 @@ const ItemDetail = ({products}) => {
                     <h3>${products.price}</h3>
                 </Card.Text>
                 <ItemCount stock={products.stock} initial={products.initial} />
-                <a href="/" className="btn">Comprar</a>
+                <Link to={`/cart`} className="btn">Comprar</Link>
             </Card.Body>
         </Card>
     )
