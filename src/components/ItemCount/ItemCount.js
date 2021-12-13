@@ -20,7 +20,7 @@ const ItemCount = ({stock, initial=0}) => {
     return (
         <div className="counter">
             <Icon link name="minus" onClick={decrease}/>
-            <input type='number' value={counter} onChange={(e)=>setCounter(counter)}/>
+            <input type='number' value={counter} onChange={()=>setCounter(counter)}/>
             <Icon link name="plus" onClick={increase}/>
         </div>
     )
