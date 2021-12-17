@@ -12,14 +12,23 @@ const ItemDetail = ({products}) => {
     const [item, setItem] = useContext(CartContext)
     const addItem = (e) => {
         const cant = e.target.parentElement.childNodes[3].childNodes[1].value;
-        const product = {
-            src: products.src,
-            title:products.title,
-            price:products.price,
-            quantity: cant
+        let exists = true
+        item.forEach(i => {
+            if(i.title === products.title){
+                i.quantity += Number(cant)
+                exists = false
+            }
+        })
+        if (exists){
+            const product = {
+                src: products.src,
+                title:products.title,
+                price:products.price,
+                quantity: Number(cant)
+            }
+            item.push(product)
+            setItem(item)
         }
-        item.push(product)
-        setItem(item)
     }
     // Estado del boton comprar
     const [textButton, setTextButton] = useState('Comprar')

@@ -17,7 +17,7 @@
 .nav li:last-child a {
     border: none;
 }
-.nav li a:hover {
+.nav li:not(:last-child) a:hover {
     background-color: #EEEEEE;
     color: #222831;
 }
