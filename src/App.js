@@ -16,6 +16,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Cart from './views/Cart/Cart';
 
 function App() {
+  
   return (
     <CartProvider>
       <Router>

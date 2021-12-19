@@ -9,8 +9,9 @@ const Cart = () => {
 
     const removeItem = (e) => {
         const elem = e.target.parentElement.parentElement.parentElement
-        const price = Number(e.target.parentElement.childNodes[1].childNodes[1])
-        const cant = Number(e.target.parentElement.childNodes[2].childNodes[1])
+        const price = e.target.parentElement.childNodes[1].childNodes[1]
+        console.log(e.target.parentElement.childNodes[1].childNodes[1]);
+        const cant = e.target.parentElement.childNodes[2].childNodes[1]
 
         total -= price * cant
         elem.removeChild(e.target.parentElement.parentElement)

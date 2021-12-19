@@ -1,25 +1,32 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-// Axios
-import axios from 'axios';
 // Components
 import ItemDetail from "../../views/ItemDetail/ItemDetail";
 
+// Firebase 
+import {db} from '../../firebaseConfig'
+import { collection, query, getDocs } from 'firebase/firestore';
+
 const ItemDetailContainer = () => {
+    const [products, setProducts] = useState([]);
     let id = useParams();
     let userID = id.id;
 
-    const [products, setProducts] = useState([]);
-
-    // Realizamos el llamado a la api para obtener los productos
     useEffect(() => {
-        axios.get(
-            /* `https://sheet.best/api/sheets/249e2778-ffef-44b9-a6ce-a1c64c7d8c35/${userID}` */
-            `https://api.sheety.co/40b027907e992305fec2df6cfd192e71/clothesAppBd/hoja1/${userID}`
-        ).then((res) => {
-                setProducts(res.data.hoja1) // Los guardamos en un estado
-            })
-    }, [userID]);
+    // Realizamos la llamada asincronica a la base de datos de firebase
+    const getProducts = async () => {
+        const q = query(collection(db, 'products'));
+        const docs = []
+        const querySnapshot = await getDocs(q)
+        querySnapshot.forEach(doc => {
+            if(doc.id === userID){
+                docs.push({...doc.data(), id: doc.id})
+            }
+        });
+        setProducts(docs[0])
+        }
+        getProducts();
+    }, [userID])
 
     return(
         <ItemDetail
