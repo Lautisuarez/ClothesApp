@@ -14,6 +14,7 @@ import Remera from './views/Remera/Remera';
 import Pantalon from './views/Pantalon/Pantalon';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Cart from './views/Cart/Cart';
+import Purchase from './views/Purchase/Purchase'
 
 function App() {
   
@@ -39,6 +40,7 @@ function App() {
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/category/:id" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path='/purchase' element={<Purchase />} />
         </Routes>
       </Router>
     </CartProvider>

@@ -1,7 +1,9 @@
-import { Fragment, useContext } from "react";
+import './Cart.css'
+import { useContext } from "react";
 import { CartContext } from "../../components/CartContext/CartContext";
 // Bootstrap react
 import { Card, Button } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const [item] = useContext(CartContext);
@@ -17,7 +19,7 @@ const Cart = () => {
         elem.removeChild(e.target.parentElement.parentElement)
     }
     return (
-        <Fragment>
+        <div className='container'>
             <h1 style={{textAlign:"center", margin:"1rem 0"}}>Carrito</h1>
             <div style={{display:"flex"}}>
                 {item.length > 0 ? item.map((i) => {
@@ -38,7 +40,8 @@ const Cart = () => {
                 }
             </div>
             <h2>Total: ${total}</h2>
-        </Fragment>
+            <Link to='/purchase' className='btn'>Finalizar compra</Link>
+        </div>
     )
 }
 
