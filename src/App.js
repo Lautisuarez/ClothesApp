@@ -23,7 +23,7 @@ function App() {
       <Router>
         {/* HEADER */}
         <header>
-          <div className="container">
+          <div className="header container">
             <a href="/">
               <img src="https://i.postimg.cc/3wdHW7Sp/logo-Letras.png" alt="Logo de Clothes App"></img>
             </a>

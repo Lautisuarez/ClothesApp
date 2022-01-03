@@ -1,9 +1,18 @@
-// Semantic
-import { Icon } from "semantic-ui-react"
+// FONT AWESOME
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+// Context
+import { Fragment, useContext } from "react"
+import { CartContext } from "../CartContext/CartContext"
 
 const CartWidget = () => {
+    const [item] = useContext(CartContext);
     return(
-        <Icon link circular inverted color="blue" size="large" name="cart" />
+        <Fragment>
+            <FontAwesomeIcon icon={faShoppingCart} />
+            <p>{item.length}</p>
+        </Fragment>
     )
 }
 

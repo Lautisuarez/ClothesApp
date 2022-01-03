@@ -4,7 +4,7 @@ body {
 header {
   background-color: #222831;
 }
-header div {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
