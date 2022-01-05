@@ -24,7 +24,8 @@ const ItemDetail = ({products}) => {
                 src: products.src,
                 title:products.title,
                 price:products.price,
-                quantity: Number(cant)
+                quantity: Number(cant),
+                id: products.id
             }
             item.push(product)
             setItem(item)
@@ -47,12 +48,11 @@ const ItemDetail = ({products}) => {
                     {products.description}
                 </Card.Text>
                 <h3>${products.price}</h3>
-                <ItemCount 
-                    stock={products.stock} 
-                    initial={products.initial} 
+                <ItemCount
+                    stock={products.stock}
+                    initial={products.initial}
                 />
                 {flag ? <Button onClick={onAdd} className="btn">{textButton}</Button> : <Link onClick={addItem} className='btn' to={'/cart'}>{textButton}</Link>}
-                
             </Card.Body>
         </Card>
     )

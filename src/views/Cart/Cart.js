@@ -6,17 +6,19 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const [item] = useContext(CartContext);
+    const [item, setItem] = useContext(CartContext);
     let total = 0;
 
     const removeItem = (e) => {
-        const elem = e.target.parentElement.parentElement.parentElement
+        const id = e.target.id
         const price = e.target.parentElement.childNodes[1].childNodes[1]
-        console.log(e.target.parentElement.childNodes[1].childNodes[1]);
         const cant = e.target.parentElement.childNodes[2].childNodes[1]
 
-        total -= price * cant
-        elem.removeChild(e.target.parentElement.parentElement)
+        let itemAux = item.filter((e) => { // Eliminamos el producto del array del carrito
+            return e.id !== id
+        })
+        setItem(itemAux)
+        total -= price * cant // Restamos del total el precio del producto eliminado
     }
     return (
         <div className='container'>
@@ -31,11 +33,11 @@ const Cart = () => {
                                 <Card.Title>{i.title}</Card.Title>
                                 <h3>${i.price}</h3>
                                 <h2>Cantidad: {i.quantity}</h2>
-                                <Button onClick={removeItem}>Eliminar</Button>
+                                <Button onClick={removeItem} id={i.id}>Eliminar</Button>
                             </Card.Body>
                         </Card>
                     )
-                }) : 
+                }) :
                     <h2>No hay productos en el carrito</h2>
                 }
             </div>
