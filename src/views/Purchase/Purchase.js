@@ -39,7 +39,7 @@ const Purchase = () => {
         }, 1000)
     }
     return(
-        <div className='container'>
+        <div className='container' style={{flex:"1"}}>
             <Form className='form-purchase' onSubmit={onSubmitHanlder}>
                 <Form.Field>
                     <label>Nombre</label>

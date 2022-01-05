@@ -21,7 +21,7 @@ const Cart = () => {
         total -= price * cant // Restamos del total el precio del producto eliminado
     }
     return (
-        <div className='container'>
+        <div className='container' style={{flex:"1"}}>
             <h1 style={{textAlign:"center", margin:"1rem 0"}}>Carrito</h1>
             <div style={{display:"flex"}}>
                 {item.length > 0 ? item.map((i) => {

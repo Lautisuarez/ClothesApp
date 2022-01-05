@@ -28,9 +28,11 @@ const ItemDetailContainer = () => {
     }, [userID])
 
     return(
-        <ItemDetail
+        <div style={{flex:"1"}}>
+            <ItemDetail
             products={products}
-        />
+            />
+        </div>
     )
 }
 

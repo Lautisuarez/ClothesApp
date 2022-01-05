@@ -10,7 +10,7 @@ const Home = () => {
             {/* CAROUSEL DE NOVEDADES */}
             <CarouselBS />
             {/* PRODUCTOS */}
-            <h2 className="container title">Novedades</h2>
+            <h2 className="container title">Productos</h2>
             <ItemListContainer />
         </Fragment>
     )

@@ -1,11 +1,12 @@
 import './App.css';
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 
 // COMPONENTS
 import NavBar from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartProvider } from './components/CartContext/CartContext';
+import Footer from './components/Footer/Footer'
 
 // VIEWS
 import Home from './views/Home/Home';
@@ -17,16 +18,15 @@ import Cart from './views/Cart/Cart';
 import Purchase from './views/Purchase/Purchase'
 
 function App() {
-  
   return (
     <CartProvider>
       <Router>
         {/* HEADER */}
         <header>
           <div className="header container">
-            <a href="/">
+            <Link to="/">
               <img src="https://i.postimg.cc/3wdHW7Sp/logo-Letras.png" alt="Logo de Clothes App"></img>
-            </a>
+            </Link>
             <NavBar />
           </div>
         </header>
@@ -42,6 +42,9 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path='/purchase' element={<Purchase />} />
         </Routes>
+
+        {/* FOOTER */}
+        <Footer />
       </Router>
     </CartProvider>
   );

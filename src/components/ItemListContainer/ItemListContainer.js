@@ -32,7 +32,7 @@ const ItemListContainer = () => {
     }, [id])
 
     return(
-        <div className="container items">
+        <div className="container items" style={{flex:"1"}}>
             <ItemList products={products} /> 
         </div>
     )
