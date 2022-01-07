@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore"
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA0oMLXMLhxmkIQ8Ifjo2okSmxnwW73uE4",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "clothesapp-suarez.firebaseapp.com",
   projectId: "clothesapp-suarez",
   storageBucket: "clothesapp-suarez.appspot.com",
-  messagingSenderId: "516968768348",
-  appId: "1:516968768348:web:d9594b66bb06255cfdd799",
-  measurementId: "G-DKZY86HFNC"
+  messagingSenderId: process.env.REACT_APP_MESSAGING_ID,
+  appId: process.env.REACT_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase

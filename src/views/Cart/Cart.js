@@ -1,4 +1,3 @@
-import './Cart.css'
 import { useContext } from "react";
 import { CartContext } from "../../components/CartContext/CartContext";
 // Bootstrap react
